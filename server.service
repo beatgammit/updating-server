@@ -1,0 +1,12 @@
+[Unit]
+Description=Self-updating server
+Wants=network.target
+After=network.target
+
+[Service]
+ExecStart=/usr/local/bin/node /usr/local/bin/updating-server/client.js
+WorkingDirectory=/usr/local/bin/updating-server/
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
